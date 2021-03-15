@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.RestEasyTesting</groupId>
+    <artifactId>RestEasyClientTest</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>RestEasyClientTest</name>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <release>11</release>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>com.gluonhq</groupId>
+                <artifactId>client-maven-plugin</artifactId>
+                <version>1.0</version>
+                <configuration>
+                    <!-- Uncomment to run on iOS: -->
+                    <!-- <target>ios</target> -->
+                    <mainClass>org.RestEasyTesting.RestEasyClientTest.HelloWorld</mainClass>
+                </configuration>
+            </plugin> 
+        </plugins>
+    </build>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>gluon-releases</id>
+            <url>https://nexus.gluonhq.com/nexus/content/repositories/releases/</url>
+        </pluginRepository>
+    </pluginRepositories>
+    <dependencies>
+    	<dependency>
+    		<groupId>javax.ws.rs</groupId>
+    		<artifactId>javax.ws.rs-api</artifactId>
+    		<version>2.0.1</version>
+    	</dependency>
+    	<dependency>
+    		<groupId>org.jboss.resteasy</groupId>
+    		<artifactId>resteasy-client</artifactId>
+    		<version>3.9.3.Final</version>
+    	</dependency>
+    	<dependency>
+    		<groupId>org.jboss.resteasy</groupId>
+    		<artifactId>resteasy-jackson-provider</artifactId>
+    		<version>3.9.3.Final</version>
+    	</dependency>
+    </dependencies>
+</project>
